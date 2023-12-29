@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+:root {
+  color-scheme: light only;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* landing page */
+.landingPage-section-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding-top: 24px;
+  text-align: center;
+  color: #063b6e;
+}
+
+.landingPage-section-title-span {
+  color: #179a8d;
+}
+
+.landingPage-section-paragraph {
+  max-width: 900px;
+  margin: auto;
+  letter-spacing: 0.025em;
+  text-align: justify;
+  padding: 4px 32px;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+}
+
+/* landing page header */
+
+.landingPage-header {
+  cursor: pointer;
+}
+
+.landingPage-header:hover {
+  cursor: pointer;
+  /* primary color */
+  color: #179a8d;
+}
+
+/* landing page footer */
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+.link-hover:hover {
+  color: #179a8d;
+}
+
+/* landing page blogs */
+.landing-page-blog-image:hover {
+  transition: all;
+  transition-duration: 1s;
+  transition-delay: 200ms;
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+/* landing page best-doctors section slider */
+.swiper-button {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 12px);
+  z-index: 10;
+  cursor: pointer;
+}
+.swiper-button svg {
+  width: 3rem;
+  height: 3rem;
+  color: #179a8d;
+}
+
+.image-swiper-button-prev {
+  left: 20px;
+}
+.image-swiper-button-next {
+  right: 20px;
+}
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* landing page user profile section */
+.user-profile-card:hover {
+  .user-profile-button {
+    background-color: #179a8d;
+    color: white;
+    transition: all;
+    transition-duration: 400ms;
+    transition-delay: 300ms;
+  }
+}
+
+.loginImage {
+  background-image: url("../../public/images/medicine.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginImage2 {
+  background-image: url("../../public/images/login2.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.docImage {
+  background-image: url("../../public/images/doctor.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pharmaImage {
+  background-image: url("../../public/images/pharma.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landingPageImage {
+  background-image: url("../../public/images/landing.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* react date-picker calender */
+
+@media screen and (max-width: 639px) {
+  .react-datepicker__month-container {
+    width: 300px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    border: grey !important;
+    border-radius: 1rem !important;
+  }
+  .react-datepicker {
+    border: none !important;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .react-datepicker {
+    border: none !important;
+  }
+
+  .react-datepicker__month-container {
+    width: 550px !important;
+    height: auto !important;
+    font-size: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    border: grey !important;
+    border-radius: 1rem !important;
+  }
+
+  .react-datepicker__current-month {
+    font-size: 1.5rem !important;
+  }
+
+  .react-datepicker__day-names {
+    margin-bottom: 0px !important;
+  }
+
+  .react-datepicker__day-name {
+    width: 3.5rem !important;
+    margin-right: 0.3rem !important;
+  }
+
+  .react-datepicker__week-number {
+    width: 3rem !important;
+    line-height: 0rem !important;
+  }
+
+  .react-datepicker__day {
+    width: 3rem !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0.5rem !important;
+  }
+
+  .react-datepicker__navigation {
+    top: 25px !important;
+    padding: 0 1rem !important;
+    z-index: 1 !important;
+  }
+
+  .react-datepicker__navigation-icon::before {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .react-datepicker__day:hover,
+  .react-datepicker__month-text:hover,
+  .react-datepicker__quarter-text:hover,
+  .react-datepicker__year-text:hover {
+    border-radius: 0.3rem;
+    background-color: #f0f0f0;
+  }
+
+  .react-datepicker__day--highlighted:hover,
+  .react-datepicker__month-text--highlighted:hover,
+  .react-datepicker__quarter-text--highlighted:hover,
+  .react-datepicker__year-text--highlighted:hover {
+    background-color: #32be3f;
+  }
+}
+
+/* date picker modal time */
+.react-datepicker__time-list {
+  width: 123px !important;
+  font-size: 16px !important;
+  padding: 0 !important;
+}
+.react-datepicker__time-container {
+  width: 112px !important;
+}
+
+.react-datepicker__time-box {
+  margin: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
