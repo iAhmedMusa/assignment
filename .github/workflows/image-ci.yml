@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ github.workspace }}/frontend
-          file: ./frontend/Dockerfile
+          # dockerfile: ./Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/frontend:latest
           push: true
@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ github.workspace }}/backend
-          file: ./backend/Dockerfile
+          # file: ./backend/Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/backend:latest
           push: true
