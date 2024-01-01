@@ -29,8 +29,8 @@ jobs:
       - name: Build and push (frontend)
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./frontend
+          context: ./frontend
+          file: ./frontend/Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/frontend:latest
           push: true
@@ -39,8 +39,8 @@ jobs:
       - name: Build and push (backend)
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./backend
+          context: ./backend
+          file: ./backend/Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/backend:latest
           push: true
