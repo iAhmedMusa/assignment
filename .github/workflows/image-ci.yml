@@ -9,6 +9,11 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - linux/amd64
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -24,16 +29,16 @@ jobs:
       - name: Build and push (frontend)
         uses: docker/build-push-action@v5
         with:
-          push: true
+          context: ./frontend
+          platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/frontend:latest
-          dockerfile: ./frontend/Dockerfile
-          working-directory: ./frontend
+          push: true
 
       # Build and push backend image
       - name: Build and push (backend)
         uses: docker/build-push-action@v5
         with:
-          push: true
+          context: ./backend
+          platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/backend:latest
-          dockerfile: ./backend/Dockerfile
-          working-directory: ./backend
+          push: true
