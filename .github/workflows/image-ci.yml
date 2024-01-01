@@ -34,7 +34,7 @@ jobs:
       - name: Build and push (frontend)
         uses: docker/build-push-action@v5
         with:
-          context: ${{ github.workspace }}/frontend
+          context: ${{ github.workspace }}/assignment_2/assignment_2/frontend
           # dockerfile: ./Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/frontend:latest
