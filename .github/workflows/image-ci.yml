@@ -25,22 +25,27 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Print Working Directory
+        run: |
+          pwd
+        working-directory: ${{ github.workspace }}
+
       # Build and push frontend image
       - name: Build and push (frontend)
         uses: docker/build-push-action@v5
         with:
-          context: ${{ github.workspace }}/assignment_2/frontend
+          context: ${{ github.workspace }}/frontend
           # dockerfile: ./Dockerfile
           platforms: ${{ matrix.platform }}
           tags: ahmedmusa007/frontend:latest
           push: true
 
-      # Build and push backend image
-      - name: Build and push (backend)
-        uses: docker/build-push-action@v5
-        with:
-          context: ${{ github.workspace }}/assignment_2/backend
-          # file: ./backend/Dockerfile
-          platforms: ${{ matrix.platform }}
-          tags: ahmedmusa007/backend:latest
-          push: true
+      # # Build and push backend image
+      # - name: Build and push (backend)
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: ${{ github.workspace }}/assignment_2/backend
+      #     # file: ./backend/Dockerfile
+      #     platforms: ${{ matrix.platform }}
+      #     tags: ahmedmusa007/backend:latest
+      #     push: true
